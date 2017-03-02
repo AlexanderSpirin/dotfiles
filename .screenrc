@@ -1,0 +1,23 @@
+# Select whether you want to see the copyright notice during startup:
+startup_message off
+ 
+term screen-256color
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+ 
+# Get rid of trailing spaces
+defbce "on"
+ 
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+ 
+# Set the scrollback length:
+defscrollback 15000
+
+#To use the scroll bar of e.g. xterm or konsole
+termcapinfo xterm* ti@:te@
+
+bind c screen 1 # Window numbering starts at 1, not 0.
+bind 0 select 10
+
+# clear screen history buffer
+bind '/' eval "clear" "scrollback 0" "scrollback 15000"
