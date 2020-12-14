@@ -11,4 +11,11 @@ else
   git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf && ${HOME}/.fzf/install
 fi
 
+# install pyenv
+if [ -d "${HOME}/.pyenv" ]; then
+  (cd ${HOME}/.pyenv && git pull)
+else
+  (git clone https://github.com/pyenv/pyenv.git ~/.pyenv)
+fi
+
 cp .*rc ${HOME}/
